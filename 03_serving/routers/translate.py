@@ -5,8 +5,8 @@ from services.translation import perform_translation
 router = APIRouter()
 
 @router.post("/translate")
-async def trnaslate(request: TranslationRequest):
+async def translate(request: TranslationRequest):
     
-    result = perform_translation(request.text, request.lang)
+    translated_text = perform_translation(request.text, request.lang)
     
-    return {"translated_text" :  result}
+    return {"result" : translated_text}
